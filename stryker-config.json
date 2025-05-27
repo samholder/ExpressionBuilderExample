@@ -1,0 +1,11 @@
+{
+  "stryker-config": {
+    "reporters": [ "html", "json" ],
+    "project":    "src/CalculatorLib/CalculatorLib.csproj",
+    "test-projects": [ "tests/CalculatorLib.Tests/CalculatorLib.Tests.csproj" ],
+    "thresholds": {
+      "high": 80,
+      "low":  60
+    }
+  }
+}
