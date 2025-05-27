@@ -41,5 +41,13 @@ namespace CalculatorLib.Tests
             var calc = new Calculator();
             Assert.ThrowsException<DivideByZeroException>(() => calc.Divide(1, 0));
         }
+
+        [TestMethod]
+        public void Divide_ByZero_ErrorMessageIsCorrect()
+        {
+            var calc = new Calculator();
+            var ex = Assert.ThrowsException<DivideByZeroException>(() => calc.Divide(1, 0));
+            Assert.AreEqual("Cannot divide by zero when the first number is odd.", ex.Message);
+        }
     }
 }
