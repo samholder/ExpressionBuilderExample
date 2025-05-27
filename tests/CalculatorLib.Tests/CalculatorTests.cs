@@ -13,6 +13,32 @@ namespace CalculatorLib.Tests
             Assert.AreEqual(5, calc.Add(2, 3));
         }
 
-        // Subtract, Multiply, Divide are not tested, so Stryker will find surviving mutants
+        [TestMethod]
+        public void Subtract_PositiveNumbers_ReturnsDifference()
+        {
+            var calc = new Calculator();
+            Assert.AreEqual(1, calc.Subtract(3, 2));
+        }
+
+        [TestMethod]
+        public void Multiply_PositiveNumbers_ReturnsProduct()
+        {
+            var calc = new Calculator();
+            Assert.AreEqual(6, calc.Multiply(2, 3));
+        }
+
+        [TestMethod]
+        public void Divide_PositiveNumbers_ReturnsQuotient()
+        {
+            var calc = new Calculator();
+            Assert.AreEqual(2, calc.Divide(6, 3));
+        }
+
+        [TestMethod]
+        public void Divide_ByZero_ThrowsDivideByZeroException()
+        {
+            var calc = new Calculator();
+            Assert.ThrowsException<DivideByZeroException>(() => calc.Divide(1, 0));
+        }
     }
 }
